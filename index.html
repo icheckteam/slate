@@ -267,6 +267,17 @@
               </ul>
           </li>
           <li>
+            <a href="#account-certificates" class="toc-h1 toc-link" data-title="Account Certificates">Account Certificates</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-certificates" class="toc-h2 toc-link" data-title="Get All Certificates">Get All Certificates</a>
+                  </li>
+                  <li>
+                    <a href="#issue-certificate" class="toc-h2 toc-link" data-title="Issue Certificate">Issue Certificate</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -575,7 +586,104 @@
 <td>The height of the block to retrieve</td>
 </tr>
 </tbody></table>
-<h1 id='txs'>Txs</h1><h2 id='search-all-txs'>Search all Txs</h2><h2 id='get-a-specific-tx'>Get a Specific Tx</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/txs/802CF829C55E83A7942B7B01F8D89578AA7128C5"</span>
+<h1 id='txs'>Txs</h1><h2 id='search-all-txs'>Search all Txs</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/txs?tag=sender='address'"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">  
+   </span><span class="s2">"hash"</span><span class="p">:</span><span class="s2">"802CF829C55E83A7942B7B01F8D89578AA7128C5"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"height"</span><span class="p">:</span><span class="s2">"32342"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"tx"</span><span class="p">:{</span><span class="w">  
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"auth/StdTx"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"value"</span><span class="p">:{</span><span class="w">  
+         </span><span class="s2">"msg"</span><span class="p">:[</span><span class="w">  
+            </span><span class="p">{</span><span class="w">  
+               </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"identity/SetCerts"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"value"</span><span class="p">:{</span><span class="w">  
+                  </span><span class="s2">"certifier"</span><span class="p">:</span><span class="s2">"cosmosaccaddr1wkwv3tl5v8t3rzdymkhmurag55k4psudpkvw2r"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"recipient"</span><span class="p">:</span><span class="s2">"cosmosaccaddr146t7xjmqsjswl6nt9c383z3xpxwfs0p8ar99ka"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"values"</span><span class="p">:[</span><span class="w">  
+                     </span><span class="p">{</span><span class="w">  
+                        </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"context"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"property"</span><span class="p">:</span><span class="s2">"livestock_certificate.vietgap"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"data"</span><span class="p">:{</span><span class="w">  
+                           </span><span class="s2">"company_address"</span><span class="p">:</span><span class="s2">"Hoang Liet Hoang Mai"</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"company_name"</span><span class="p">:</span><span class="s2">"324234"</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"effective_date"</span><span class="p">:</span><span class="s2">"1532503877"</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"email"</span><span class="p">:</span><span class="s2">"thangn.1411@gmail.com"</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"end_date"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"phone"</span><span class="p">:</span><span class="s2">"977465849"</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"predictive_production"</span><span class="p">:</span><span class="s2">"212121"</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"product_or_group"</span><span class="p">:</span><span class="s2">"12121"</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"registration_id"</span><span class="p">:</span><span class="s2">"12121"</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"total_production_area"</span><span class="p">:</span><span class="s2">"21212"</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"website"</span><span class="p">:</span><span class="s2">"http://icheckcorp.com/"</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="s2">"confidence"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"expires"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"revocation"</span><span class="p">:{</span><span class="w">  
+                           </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">""</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+                     </span><span class="p">}</span><span class="w">
+                  </span><span class="p">]</span><span class="w">
+               </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+         </span><span class="p">],</span><span class="w">
+         </span><span class="s2">"fee"</span><span class="p">:{</span><span class="w">  
+            </span><span class="s2">"amount"</span><span class="p">:[</span><span class="w">  
+               </span><span class="p">{</span><span class="w">  
+                  </span><span class="s2">"denom"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"amount"</span><span class="p">:</span><span class="s2">"0"</span><span class="w">
+               </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"gas"</span><span class="p">:</span><span class="s2">"50000"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="s2">"signatures"</span><span class="p">:[</span><span class="w">  
+            </span><span class="p">{</span><span class="w">  
+               </span><span class="s2">"pub_key"</span><span class="p">:{</span><span class="w">  
+                  </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"tendermint/PubKeySecp256k1"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"value"</span><span class="p">:</span><span class="s2">"A3vmPuikkyMxpPG7xq0YW5OpEth13P+Y2vHjtHdwM8bv"</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="s2">"signature"</span><span class="p">:{</span><span class="w">  
+                  </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"tendermint/SignatureSecp256k1"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"value"</span><span class="p">:</span><span class="s2">"MEQCICyw6jWICmqgykRFR7IK/o7qfwSLQo08zv3CTqB5ute0AiAuO1bHnr1Qiba4F81f50JqS5hxe8xOgmcM3x6dH9x3vA=="</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="s2">"account_number"</span><span class="p">:</span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"sequence"</span><span class="p">:</span><span class="s2">"3"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+         </span><span class="p">],</span><span class="w">
+         </span><span class="s2">"memo"</span><span class="p">:</span><span class="s2">""</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="s2">"result"</span><span class="p">:{</span><span class="w">  
+      </span><span class="s2">"log"</span><span class="p">:</span><span class="s2">"Msg 0: "</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"gas_used"</span><span class="p">:</span><span class="s2">"5321"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"fee"</span><span class="p">:{</span><span class="w">  
+
+      </span><span class="p">}</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="s2">"time"</span><span class="p">:</span><span class="s2">"0"</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves specific tx.</p>
+<h3 id='http-request-8'>HTTP Request</h3>
+<p><code>GET http://example.com/txs/?tag=&lt;tag&gt;</code></p>
+<h3 id='url-parameters-5'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>tag</td>
+<td>The tag of the tx to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-specific-tx'>Get a Specific Tx</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/txs/802CF829C55E83A7942B7B01F8D89578AA7128C5"</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -658,9 +766,9 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves specific tx.</p>
-<h3 id='http-request-8'>HTTP Request</h3>
+<h3 id='http-request-9'>HTTP Request</h3>
 <p><code>GET http://example.com/txs/&lt;hash&gt;</code></p>
-<h3 id='url-parameters-5'>URL Parameters</h3>
+<h3 id='url-parameters-6'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -672,12 +780,128 @@
 <td>The hash of the tx to retrieve</td>
 </tr>
 </tbody></table>
+<h1 id='account-certificates'>Account Certificates</h1><h2 id='get-all-certificates'>Get All Certificates</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/accounts/cosmosaccaddr146t7xjmqsjswl6nt9c383z3xpxwfs0p8ar99ka/certs"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">  
+   </span><span class="p">{</span><span class="w">  
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"context"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"property"</span><span class="p">:</span><span class="s2">"entity.person"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"certifier"</span><span class="p">:</span><span class="s2">"cosmosaccaddr178r5xtw82ethyzyn82wa8yry76nnmyr26m79ww"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"owner"</span><span class="p">:</span><span class="s2">"cosmosaccaddr16y6p2v"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"trust"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"data"</span><span class="p">:{</span><span class="w">  
+         </span><span class="s2">"address_line_1"</span><span class="p">:</span><span class="s2">"Hoang Liet Hoang Mai"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"address_line_2"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"city"</span><span class="p">:</span><span class="s2">"Hanoi"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"country"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"effective_date"</span><span class="p">:</span><span class="s2">"1532344605"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"end_date"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"first_name"</span><span class="p">:</span><span class="s2">"Thang"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"last_name"</span><span class="p">:</span><span class="s2">"Nguyen"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"org_type"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"postal_code"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"province"</span><span class="p">:</span><span class="s2">"Hà Nội"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"confidence"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"expires"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="s2">"1532328402"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"revocation"</span><span class="p">:{</span><span class="w">  
+         </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">""</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves certificates.</p>
+<h3 id='http-request-10'>HTTP Request</h3>
+<p><code>GET http://example.com/accounts/&lt;addr&gt;/certs</code></p>
+<h3 id='url-parameters-7'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>addr</td>
+<td>The address of the account to retrieve</td>
+</tr>
+</tbody></table>
+<h3 id='query-string'>Query String</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>trust</td>
+<td>Only retrieve trust certificate</td>
+</tr>
+<tr>
+<td>certifier</td>
+<td>The address of the certifier</td>
+</tr>
+<tr>
+<td>property</td>
+<td>The property of the certificate</td>
+</tr>
+</tbody></table>
+<h2 id='issue-certificate'>Issue Certificate</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/accounts/cosmosaccaddr146t7xjmqsjswl6nt9c383z3xpxwfs0p8ar99ka/certs"</span>
+  -H <span class="s2">"Accept: application/json"</span>
+  -X POST -d <span class="s1">'{"values": [{"property": "company", "data": {"demo": "demo"}, "confidence": true}]}'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"check_tx"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"log"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"info"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"gas_wanted"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"gas_used"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"fee"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"delive_tx"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"log"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"info"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"gas_wanted"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"gas_used"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"fee"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint issue certificate.</p>
+<h3 id='http-request-11'>HTTP Request</h3>
+<p><code>POST http://example.com/accounts/&lt;addr&gt;/certs</code></p>
+<h3 id='url-parameters-8'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>addr</td>
+<td>The address of the account to receive</td>
+</tr>
+</tbody></table>
 <h1 id='errors'>Errors</h1>
 <aside class="notice">
 This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
 </aside>
 
-<p>The Kittn API uses the following error codes:</p>
+<p>The Ichain API uses the following error codes:</p>
 
 <table><thead>
 <tr>
@@ -695,15 +919,15 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 </tr>
 <tr>
 <td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+<td>Forbidden -- The ichain requested is hidden for administrators only.</td>
 </tr>
 <tr>
 <td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
+<td>Not Found -- The specified ichain could not be found.</td>
 </tr>
 <tr>
 <td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+<td>Method Not Allowed -- You tried to access a ichain with an invalid method.</td>
 </tr>
 <tr>
 <td>406</td>
@@ -711,7 +935,7 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 </tr>
 <tr>
 <td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
+<td>Gone -- The ichain requested has been removed from our servers.</td>
 </tr>
 <tr>
 <td>418</td>
@@ -719,7 +943,7 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 </tr>
 <tr>
 <td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+<td>Too Many Requests -- You&#39;re requesting too many! Slow down!</td>
 </tr>
 <tr>
 <td>500</td>
